@@ -1,0 +1,17 @@
+---
+- name: Install daily tools
+  become: true
+  apt:
+    name:
+      - curl
+    state: present
+    autoclean: yes
+
+- name: Update system
+  become: true
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400
+    autoclean: yes
+  when: apt_upgrade

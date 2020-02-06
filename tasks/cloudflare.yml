@@ -1,0 +1,10 @@
+---
+- name: "set cloudflare dns for hostname to ip"
+  cloudflare_dns:
+    zone: "{{ cloudflare__zone }}"
+    record: "{{ inventory_hostname.split('.')[0] }}"
+    type: A
+    value: "{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
+    account_email: "{{ cloudflare__email }}"
+    account_api_token: "{{ cloudflare__token }}"
+  register: record

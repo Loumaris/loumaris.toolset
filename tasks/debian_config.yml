@@ -1,0 +1,5 @@
+---
+
+- name: Update hostname matching inventory
+  become: true
+  hostname: name={{ inventory_hostname }}

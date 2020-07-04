@@ -1,4 +1,5 @@
 ---
 # defaults file for loumaris.toolset
 apt_upgrade: false
+cloudflare: true
 cloudflare__zone: loumaris.cloud

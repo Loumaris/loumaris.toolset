@@ -8,3 +8,4 @@
     account_email: "{{ cloudflare__email }}"
     account_api_token: "{{ cloudflare__token }}"
   register: record
+  when: cloudflare
